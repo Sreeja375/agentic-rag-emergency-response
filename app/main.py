@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from langchain_openai import ChatOpenAI
 #from app.rag.vector_store import build_vector_store
 from app.rag.vector_store import build_vector_store
-from app.agent_router import route_agents
+from app.agent_routers import route_agents
 
 
 from app.agent_router import route_agents
