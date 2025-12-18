@@ -1,6 +1,8 @@
 from fastapi import FastAPI
 from langchain_openai import ChatOpenAI
+#from app.rag.vector_store import build_vector_store
 from app.rag.vector_store import build_vector_store
+
 from app.agent_router import route_agents
 from app.agents.medical_agent import medical_agent
 from app.agents.location_agent import location_agent
