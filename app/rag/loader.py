@@ -1,7 +1,8 @@
-from langchain.document_loaders import TextLoader
+from langchain_community.document_loaders import TextLoader
+
 
 def load_docs():
     docs = []
-    docs += TextLoader("data/first_aid.txt").load()
-    docs += TextLoader("data/emergency_guidelines.txt").load()
+    docs.extend(TextLoader("data/first_aid.txt").load())
+    docs.extend(TextLoader("data/emergency_guidelines.txt").load())
     return docs
