@@ -1,10 +1,10 @@
-from langchain_community.chains import RetrievalQA
+from langchain.chains.retrieval_qa import RetrievalQA
 
 
 def medical_agent(llm, vectorstore, query: str) -> str:
     """
     Provides first-aid guidance using RAG.
-    No diagnosis, only informational assistance.
+    Informational only — no diagnosis.
     """
 
     qa_chain = RetrievalQA.from_chain_type(
@@ -12,8 +12,6 @@ def medical_agent(llm, vectorstore, query: str) -> str:
         retriever=vectorstore.as_retriever()
     )
 
-    response = qa_chain.run(
+    return qa_chain.run(
         f"Give first-aid steps only (no diagnosis) for: {query}"
     )
-
-    return response
